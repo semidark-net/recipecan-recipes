@@ -204,7 +204,7 @@ class RecipeCan_Binders_Admin extends RecipeCan_Binders_Abstract {
             $this->setup();
         } else {
             $recipes = $this->make_recipes();
-            $recipes->download_recipes();
+            //$recipes->download_recipes();
 
             $this->view->set('recipes', $recipes->all());
             $this->view->render('admin/recipes/index');

@@ -132,11 +132,11 @@ class RecipeCan_Models_Abstract extends RecipeCan_Abstract {
 
         $limit_string = "";
         if ($limit != null) {
-            $limit_string = "limit " . mysql_real_escape_string((int) $limit);
+            $limit_string = "limit " . $limit;
         }
 
         return $wpdb->get_results(
-                'select * from `' . mysql_real_escape_string($this->table_name()) . '`' .
+                'select * from `' . $this->table_name() . '`' .
                 ' order by recipecan_id desc ' . $limit_string,
                 ARRAY_A
         );
