@@ -17,12 +17,17 @@ class RecipeCan_View {
         $this->helpers();
 
         $template = file_get_contents($this->options['path'] . '/views/' . $file . '.mustache');
-        return $m->render($template, $this->value, array(
+	$returnValue = '<div style="text-align: center; padding-top: 15px;">'.ad_widget($adsUsed).'</div>';
+
+        $returnValue .=  $m->render($template, $this->value, array(
             'recipe_preview' => file_get_contents($this->options['path'] . '/views/recipes/_preview.mustache'),
             'recipe_preview_group' => file_get_contents($this->options['path'] . '/views/recipes/_preview_group.mustache'),
             'form_errors' => file_get_contents($this->options['path'] . '/views/shared/_form_errors.mustache'),
             'recipe_form' => file_get_contents($this->options['path'] . '/views/admin/recipes/_form.mustache')
         ));
+	$returnValue .= '<div style="text-align: center; padding-top: 15px;">'.ad_widget($adsUsed).'</div>';
+	return $returnValue;
+	
     }
 
     /**
