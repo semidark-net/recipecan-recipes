@@ -45,7 +45,8 @@ abstract class RecipeCan_Row_Abstract extends RecipeCan_Abstract {
         $text = $this->get($field);
         $text = trim($text);
         $text = preg_replace("/[\r\n]{2,}/", "\n", $text);
-        $as_a = split("\n", $text);
+        //$as_a = split("\n", $text);
+        $as_a = explode("\n", $text);
 
         return $as_a;
     }

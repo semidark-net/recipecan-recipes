@@ -56,7 +56,7 @@ class Zend_Json
     /**
      * @var bool
      */
-    public static $useBuiltinEncoderDecoder = false;
+    public static $useBuiltinEncoderDecoder = true;
 
     /**
      * Decodes the given $encodedValue string which is
