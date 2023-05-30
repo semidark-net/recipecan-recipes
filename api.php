@@ -8,6 +8,8 @@ class RecipeCan_Api extends RecipeCan_Abstract {
 
     public function call($verb, $url, $args = array(), $headers = array()) {
 
+        // Remove the remote api calls all together
+        /*
         set_time_limit(0);
 
         $debug = false;
@@ -74,6 +76,9 @@ class RecipeCan_Api extends RecipeCan_Abstract {
 
         $this->response = $json_as_array;
         return $json_as_array;
+        */
+        // return an empty dummy response
+        return array();
     }
 
     public function failed() {
